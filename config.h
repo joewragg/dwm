@@ -63,6 +63,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", "--force-device-scale-factor=1.3", NULL };
 static const char *fbcommand[]  = { "st", "-e", "ranger", NULL };
 static const char *killcmd[]  = { "killall", "Xorg", NULL };
+static const char *lockcmd[]  = { "/home/joe/i3lock-blur/lock.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -71,13 +72,13 @@ static Key keys[] = {
 	{ MODKEY,	                XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,             		XK_l,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,         		XK_q,      killclient,     {0} },
