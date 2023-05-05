@@ -52,6 +52,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+#define PrintScreenDWM      0x0000ff61
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -63,6 +64,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", "--force-device-scale-factor=1.3", NULL };
 static const char *fbcommand[]  = { "st", "-e", "ranger", NULL };
 static const char *killcmd[]  = { "killall", "Xorg", NULL };
+static const char *scrotCmd[]  = { "scrot", "-s", NULL };
 static const char *lockcmd[]  = { "/home/joe/i3lock-blur/lock.sh", NULL };
 
 static Key keys[] = {
@@ -87,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ 0,                            PrintScreenDWM,  spawn, {.v = scrotCmd } },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
