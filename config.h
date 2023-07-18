@@ -62,7 +62,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "google-chrome-stable", "--force-device-scale-factor=1.3", NULL };
-static const char *fbcommand[]  = { "st", "-e", "ranger", NULL };
+static const char *fbcommand[]  = { "nautilus", NULL };
 static const char *killcmd[]  = { "killall", "Xorg", NULL };
 static const char *scrotCmd[]  = { "scrot", "-s", NULL };
 static const char *lockcmd[]  = { "/home/joe/i3lock-blur/lock.sh", NULL };
